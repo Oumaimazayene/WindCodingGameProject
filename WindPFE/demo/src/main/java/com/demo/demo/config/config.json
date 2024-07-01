@@ -1,0 +1,15 @@
+{
+  "dev" : {
+    "PORT": 3000,
+    "DB_URI" : "dev.example-db-uri.com",
+    "JDOODLE_CLIENT_ID" : "261f93b0f0faeccbcfac701cda4ea3a",
+    "JDOODLE_CLIENT_SECRET": "d6e833d076b171ca4798268ddcea3311075d8d4802044cb83adcefeefbd4910f"
+  },
+  "test" : {
+    "PORT": 4000,
+    "DB_URI" : "test.example-db-uri.com",
+    "JDOODLE_CLIENT_ID" : "261f93b0f0faeccbcfac701cda4ea3a",
+    "JDOODLE_CLIENT_SECRET": "d6e833d076b171ca4798268ddcea3311075d8d4802044cb83adcefeefbd4910f"
+  }
+
+}
