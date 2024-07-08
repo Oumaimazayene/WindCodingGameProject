@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="WindRecruiterReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d4a2e8a3-8c7f-4d73-8a93-9f75e489e1b1">
+    <property name="ireport.zoom" value="1.25"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="80">
+            <rectangle radius="0" backcolor="#1c1c2b" forecolor="#1c1c2b">
+                <reportElement x="0" y="0" width="555" height="80"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="10" y="20" width="200" height="40" forecolor="#FFFFFF"/>
+                <textElement textAlignment="Left">
+                    <font size="32" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Rapport Final]]></text>
+            </staticText>
+            <image>
+                <reportElement x="445" y="0" width="110" height="80"/>
+                <imageExpression><![CDATA["file:C:/Users/DELL/Desktop/stage pfe/WindHiring/WindPFE/demo/src/main/resources/static/LogoWindERP.svg"]]></imageExpression>
+            </image>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="100">
+            <rectangle radius="0" backcolor="#d3d3d3" forecolor="#d3d3d3">
+                <reportElement x="0" y="0" width="555" height="100"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="10" y="10" width="300" height="30"/>
+                <textElement>
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[${candidatefirstname} ${cadidatelastname}]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="40" width="300" height="20"/>
+                <text><![CDATA[${email}]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="60" width="300" height="20"/>
+                <text><![CDATA[Date de Test: ${date}]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="310" y="10" width="245" height="30"/>
+                <text><![CDATA[Success Rate: ${rate}%]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="310" y="40" width="245" height="20"/>
+                <text><![CDATA[Correct Answers Count: ${correctCount}]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="310" y="60" width="245" height="20"/>
+                <text><![CDATA[Score Total: ${scorefinal}]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="310" y="80" width="245" height="20"/>
+                <text><![CDATA[Score Final: ${Score}]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="555" height="20"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Question " + $F{question_index + 1} + ": " + $F{question.questionBody}]]></textFieldExpression>
+            </textField>
+        </band>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="555" height="20"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Question Score: " + $F{question.score}]]></textFieldExpression>
+            </textField>
+        </band>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="555" height="20"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Verified Answer: " + ($F{reponseVerifiees}[$F{question_index}] != null ? ($F{reponseVerifiees}[$F{question_index}] ? "True" : "False") : "Pas encore vérifiée")]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
